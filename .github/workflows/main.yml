@@ -1,0 +1,9 @@
+name: nomadics
+run-name: Setting the code for the DB
+on: [push]
+jobs:
+  test-output:
+    runs-on: ubuntu-latest
+    steps:
+    - name: test output
+      run: echo "This is my first test"
