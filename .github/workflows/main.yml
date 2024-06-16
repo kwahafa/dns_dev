@@ -7,9 +7,9 @@ jobs:
     steps:
     - name: test output
       run: echo "This is my first test"
-connect-remote:
-  runs-on: ubuntu-latest
-  steps:
-  - uses: actions/checkout@v3
-  - name: show server_version();
-    run: psql -h ${{ secrets.DBHOSTNAME}} -u${{secret.DB_USER}} --p${{secret.DB_PASSWORD}} --port 5432
+  connect-remote:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: show server_version();
+      run: psql -h ${{ secrets.DBHOSTNAME}} -u${{secret.DB_USER}} --p${{secret.DB_PASSWORD}} --port 5432
