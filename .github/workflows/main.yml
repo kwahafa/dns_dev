@@ -13,5 +13,6 @@ jobs:
     - uses: actions/checkout@v4
     - name: select version
       run: apt-get update; apt-get install --yes --no-install-recommends postgresql-client
+    - uses: actions/checkout@v4
     - name: test connection      
-      tun: psql -h${{ secrets.DBHOSTNAME}} -d${{secrets.DB_NAME}} -U${{secrets.DB_USER}} -W${{secrets.DB_PASSWORD}}
+      run: psql -h${{ secrets.DBHOSTNAME}} -d${{secrets.DB_NAME}} -U${{secrets.DB_USER}} -W${{secrets.DB_PASSWORD}}
