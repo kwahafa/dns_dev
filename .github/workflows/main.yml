@@ -12,4 +12,4 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: show server_version();
-      run: psql -h${{ secrets.DBHOSTNAME}} -u${{secrets.DB_USER}} -p${{secrets.DB_PASSWORD}} --port 5432 -d${secrets.DB_NAME}
+      run: psql -h${{ secrets.DBHOSTNAME}} -d${{secrets.DB_NAME}} -u${{secrets.DB_USER}} -p${{secrets.DB_PASSWORD}} --port 5432 
