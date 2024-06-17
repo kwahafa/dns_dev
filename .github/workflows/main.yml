@@ -8,7 +8,7 @@ jobs:
     - name: test output
       run: echo "This is my first test"
   connect-remote:
-    runs-on: postgres-latest
+    runs-on: postgres
     steps:
     - uses: actions/checkout@v4
     - name: select version
