@@ -12,4 +12,4 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: select version()
-      run: psql -h${{ secrets.DBHOSTNAME}} -d${{secrets.DB_NAME}} -U${{secrets.DB_USER}} -W${{secrets.DB_PASSWORD}} -p 5432 
+      run: psql -h${{ secrets.DBHOSTNAME}} -d${{secrets.DB_NAME}} -U${{secrets.DB_USER}} -W${{secrets.DB_PASSWORD}} -p 5432 -tc "create database dbb;"
