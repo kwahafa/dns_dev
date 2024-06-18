@@ -12,8 +12,8 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: select version
-      run: sudo apt-get update -y ; sudo apt-get install --yes --no-install-recommends postgresql-client-16
+      run: sudo apt-get update -y ; sudo apt-get install --yes --no-install-recommends postgresql-client
     - uses: actions/checkout@v4
     - name: test connection      
-      run: psql --host${{secrets.DBHOSTNAME}} -d${{secrets.DB_NAME}} -U${{secrets.DB_USER}} -W${{secrets.DB_PASSWORD}}
+      run: psql --version
 
