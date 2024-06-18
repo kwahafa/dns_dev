@@ -15,5 +15,5 @@ jobs:
       run: sudo apt-get update -y ; sudo apt-get install --yes --no-install-recommends postgresql-client
     - uses: actions/checkout@v4
     - name: test connection      
-      run: psql --version
+      run: psql -h${{ secrets.DBHOSTNAME }} -d${{ secrets.DB_NAME }} -U${{ secrets.DB_USER }} -W${{ secrets.DB_PASSWORD }} -c "select current_user"
 
