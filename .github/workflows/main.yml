@@ -14,6 +14,6 @@ jobs:
     - name: select version
       run: sudo apt-get update -y ; sudo apt-get install --yes --no-install-recommends postgresql-client
     - uses: actions/checkout@v4
-    - name: test connection      
-      run: export PGPASSWORD='Salimatou19'; psql  -h digital-nomad-dev-postgres-001.postgres.database.azure.com -U digital_dev_postg -d dev_digital_nomad -p 5432 -f create_objects.sql
+    - name: test connection and sql file      
+      run: export PGPASSWORD='Salimatou19'; psql  -h${{secrets.DBHOSTNAME}} -U digital_dev_postg -d dev_digital_nomad -p 5432 -f create_objects.sql
 
